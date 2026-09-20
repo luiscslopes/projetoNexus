@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
     <head>
         <title>Nexus Login</title>
         <meta charset="UTF-8">
@@ -9,25 +8,32 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
         <script src="js/script.js" defer></script>
-
-
     </head>
 
-    <body>
-        <h1 class="destaque">Bem-vindo ao NEXUS</h1>
-        <h2>Acesse sua identidade digital</h2>
+    <!-- O segredo está aqui: adicionamos a classe 'tela-login' para isolar os estilos -->
+    <body class="tela-login">
+        
+        <div class="login-container">
+            <div class="login-header">
+                <h1 class="destaque">NEXUS</h1>
+                <h2>Acesse sua identidade digital</h2>
+            </div>
 
-        <form>
-            <label class="label" for = "email">Digite seu email</label>
-            <input class="entrada" type="email" id = "email" name = "email">
-            <label class="label" for = "senha">Digite a sua senha</label>
-            <input class="entrada" type="password" id = "senha" name = "senha">
-            <button class="botao" id="entrar" type="submit">Entrar</button>
-            <p id="mensagem"></p>
-        </form> 
+            <form class="login-form">
+                <div class="grupo-input">
+                    <label class="label" for="email">Digite seu email</label>
+                    <input class="entrada" type="email" id="email" name="email" placeholder="nome@exemplo.com" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <label class="label" for="senha">Digite a sua senha</label>
+                    <input class="entrada" type="password" id="senha" name="senha" placeholder="••••••••" required>
+                </div>
 
+                <button class="botao-entrar" id="entrar" type="submit">Entrar</button>
+                <p id="mensagem"></p>
+            </form> 
+        </div>
 
     </body>
-
 </html>
-

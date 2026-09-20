@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
         <title>Dashboard</title>
         <meta charset="UTF-8">
@@ -8,48 +8,51 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
         <script src="js/script.js" defer></script>
-
     </head>
     <body>
-        <div class="cabecalho">
+        <nav class="menu">
             <h2>NEXUS</h2>
-            <p>Luis</p>
-        </div>
+            <div class="menu-items">
+                <button class="active">Dashboard</button>
+                <button>Minha Identidade</button>
+                <button>Segurança</button>
+                <button>Atividades</button>
+            </div>
+            <button class="btn-sair" id="sair">Sair</button>
+        </nav>
 
-        <div class="principal">
-            <h1 class="titulo-dashboard">Bem-vindo ao Dashboard do NEXUS</h1>
-
-            <div class="cards">
-                <div class="card">
-                    <h2>Minha Identidade</h2>
-                    <p>Consulte suas informações pessoais.</p>
-
-                    <button class="botao-dashboard" id="identidade">Ver identidade</button>
-
-                    <p id="informacao-identidade"></p>
-                </div>
-
-                <div class="card">
-                    <h2>Segurança</h2>
-                    <p>Gerencie a segurança da sua conta.</p>
-
-                    <button class="botao-dashboard" id="seguranca">Ver segurança</button>
-
-                    <p id="informacao-seguranca"></p>
-                </div>
-
-                <div class="card">
-                    <h2>Atividades recentes</h2>
-                    <p>Confira as atividades recentes da sua conta.</p>
-
-                    <button class="botao-dashboard" id="atividades">Ver atividades</button>
-
-                    <p id="informacao-atividades"></p>
-                </div>
+        <div class="conteudo">
+            <div class="cabecalho">
+                <h2>NEXUS</h2>
+                <p class="usuario">Luis</p>
             </div>
 
-            <button class="botao-dashboard" id="sair">Sair</button>
-        </div>
+            <div class="principal">
+                <h1 class="titulo-dashboard">Bem-vindo ao Dashboard do NEXUS</h1>
 
+                <div class="cards">
+                    <div class="card">
+                        <h2>Minha Identidade</h2>
+                        <p>Consulte suas informações pessoais.</p>
+                        <button class="botao-dashboard" id="identidade">Ver identidade</button>
+                        <p id="informacao-identidade"></p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Segurança</h2>
+                        <p>Gerencie a segurança da sua conta.</p>
+                        <button class="botao-dashboard" id="seguranca">Ver segurança</button>
+                        <p id="informacao-seguranca"></p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Atividades recentes</h2>
+                        <p>Confira as atividades recentes da sua conta.</p>
+                        <button class="botao-dashboard" id="atividades">Ver atividades</button>
+                        <p id="informacao-atividades"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

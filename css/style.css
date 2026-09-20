@@ -1,128 +1,308 @@
+/* ==========================================================================
+   RESET & CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #080B14;
-    font-family: "Space Grotesk";
+    flex-direction: row;
+    background-color: #0B0F19;
+    color: #F8FAFC;
+    font-family: "Space Grotesk", sans-serif;
 }
 
-.destaque {
-    color: #00E5FF;
-    margin: 10px;
-    margin-top: 20px;
-    padding: 10px;
-    border: solid 3px #00E5FF;
-    border-radius: 10px;
-
-}
-
-.entrada {
-    width: 200px;
-    height: 20px;
-    padding-bottom: 7px;
-    border: solid 2px #4682B4;
-    border-radius: 15px;
-    background-color: #080B14;
-    color: rgb(250, 250, 247);
-}
-
-.entrada:focus{
-    border: solid 3px #00E5FF;
-}
-
-.label {
-    display: block;
-    margin-bottom: 3px;
-}
-
-.botao {
-    display: block;
-    margin-top: 12px;
-    transition: 0.3s;
-}
-
-.botao:hover{
-    background-color: #4B0082;
-}
-
-h2 {
-    color: rgb(250, 250, 247);
-}
-
-form {
-    color: rgb(214, 212, 210);
-}
-
-.principal {
+/* ==========================================================================
+   MENU LATERAL (SIDEBAR)
+   ========================================================================== */
+.menu {
+    width: 260px;
+    height: 100vh;
+    padding: 30px 20px;
+    background-color: #111827;
+    border-right: 1px solid #1F2937;
     display: flex;
     flex-direction: column;
-    width: 90%;
-    max-width: 1200px;
-} 
-
-.cards {
-    display:flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 90%;
+    position: sticky;
+    top: 0;
 }
 
-.card{
-    flex: 1;
-    padding: 20px;
-    border: solid 2px #4682B4;
-    border-radius: 15px;
-    background-color: #101625;
-}
-
-.card h2 {
+.menu h2 {
     color: #00E5FF;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    padding-left: 10px;
 }
 
-.card p {
-    color: rgb(214, 212, 210);
-    white-space: pre-line;
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
 }
 
-.titulo-dashboard {
-    color: #4B0082;
-}
-
-.botao-dashboard {
-    margin-top: 15px;
-    padding: 8px 15px;
-    border: solid 2px #4682B4;
-    border-radius: 10px;
-    background-color: #080B14;
-    color: rgb(250, 250, 247);
+.menu button {
+    background: transparent;
+    border: none;
+    color: #94A3B8;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.2s ease;
 }
 
-.botao-dashboard:hover {
-    background-color: #4B0082;
-    border-color: #00E5FF;
+.menu button:hover {
+    background-color: #1F2937;
+    color: #F8FAFC;
+}
+
+.menu button.active {
+    background-color: rgba(0, 229, 255, 0.1);
+    color: #00E5FF;
+    font-weight: 600;
+}
+
+.menu .btn-sair {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #F87171;
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    padding: 12px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: auto;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.menu .btn-sair:hover {
+    background-color: #EF4444;
+    color: #FFFFFF;
+    border-color: #EF4444;
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL & ESTRUTURA
+   ========================================================================== */
+.conteudo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
 }
 
 .cabecalho {
     width: 100%;
-    padding: 15px 30px;
-    box-sizing: border-box;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid 2px #4682B4;
-    background-color: #101625;
+    border-bottom: 1px solid #1F2937;
+    background-color: #111827;
 }
 
 .cabecalho h2 {
-    color: #00E5FF;
-    margin: 0;
+    color: #F8FAFC;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
-.cabecalho p {
-    color: rgb(250, 250, 247);
-    margin: 0;
+.cabecalho .usuario {
+    background-color: #1F2937;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #00E5FF;
+    font-weight: 600;
+}
+
+.principal {
+    padding: 40px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.titulo-dashboard {
+    color: #F8FAFC;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   CARDS & GRID
+   ========================================================================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.card {
+    background-color: #111827;
+    border: 1px solid #1F2937;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: #374151;
+}
+
+.card h2 {
+    color: #00E5FF;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #94A3B8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.botao-dashboard {
+    width: 100%;
+    padding: 10px 16px;
+    background-color: #1F2937;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    color: #F8FAFC;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.botao-dashboard:hover {
+    background-color: #00E5FF;
+    border-color: #00E5FF;
+    color: #0B0F19;
+}
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DA TELA DE LOGIN (Isolados via body.tela-login)
+   ========================================================================== */
+body.tela-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0B0F19;
+    padding: 20px;
+}
+
+.login-container {
+    background-color: #111827;
+    border: 1px solid #1F2937;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.login-header .destaque {
+    color: #00E5FF;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.login-header h2 {
+    color: #94A3B8;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.login-form .label {
+    color: #F8FAFC;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.login-form .entrada {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    background-color: #0B0F19;
+    color: #F8FAFC;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.login-form .entrada:focus {
+    outline: none;
+    border-color: #00E5FF;
+    box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15);
+}
+
+.botao-entrar {
+    width: 100%;
+    height: 44px;
+    margin-top: 8px;
+    background-color: #00E5FF;
+    border: none;
+    border-radius: 8px;
+    color: #0B0F19;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botao-entrar:hover {
+    background-color: #00B2CC;
+    transform: translateY(-1px);
+}
+
+#mensagem {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #EF4444;
 }
