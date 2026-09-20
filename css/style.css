@@ -54,3 +54,35 @@ h2 {
 form {
     color: rgb(214, 212, 210);
 }
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+} 
+
+.cards {
+    display:flex;
+    gap: 20px;
+}
+
+.card{
+    flex: 1;
+    padding: 20px;
+    border: solid 2px #4682B4;
+    border-radius: 15px;
+    background-color: #101625;
+}
+
+.card h2 {
+    color: #00E5FF;
+}
+
+.card p {
+    color: rgb(214, 212, 210);
+    white-space: pre-line;
+}
+
+.titulo-dashboard {
+    color: #4B0082;
+}

@@ -3,12 +3,48 @@
     <head>
         <title>Dashboard</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+        <script src="js/script.js" defer></script>
 
     </head>
     <body>
 
         <div class="principal">
-            <h1>Bem-vindo ao Dashboard do NEXUS</h1>
+            <h1 class="titulo-dashboard">Bem-vindo ao Dashboard do NEXUS</h1>
+
+            <div class="cards">
+                <div class="card">
+                    <h2>Minha Identidade</h2>
+                    <p>Consulte suas informações pessoais.</p>
+
+                    <button id="identidade">Ver identidade</button>
+
+                    <p id="informacao-identidade"></p>
+                </div>
+
+                <div class="card">
+                    <h2>Segurança</h2>
+                    <p>Gerencie a segurança da sua conta.</p>
+
+                    <button id="seguranca">Ver segurança</button>
+
+                    <p id="informacao-seguranca"></p>
+                </div>
+
+                <div class="card">
+                    <h2>Atividades recentes</h2>
+                    <p>Confira as atividades recentes da sua conta.</p>
+
+                    <button id="atividades">Ver atividades</button>
+
+                    <p id="informacao-atividades"></p>
+                </div>
+            </div>
+
+            <button id="sair">Sair</button>
         </div>
 
     </body>
