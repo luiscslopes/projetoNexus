@@ -64,7 +64,7 @@ if (botaoSeguranca !== null) {
 // Card: Atividades Recentes
 const botaoAtividades = document.getElementById("atividades");
 if (botaoAtividades !== null) {
-    botaoAtividades.addEventListener("colocar", function() {}); // Mantendo o escopo limpo
+    //botaoAtividades.addEventListener("colocar", function() {}); // Mantendo o escopo limpo
     
     botaoAtividades.addEventListener("click", function() {
         if (botaoAtividades.textContent.trim() === "Ver atividades") {
@@ -83,7 +83,26 @@ if (botaoAtividades !== null) {
 const botaoSair = document.getElementById("sair");
 if (botaoSair !== null) {
     botaoSair.addEventListener("click", function() {
-        // Redireciona de volta para a sua tela de login (ajuste o nome do arquivo se necessário)
+        // Redireciona de volta para a tela de login
         window.location.href = "nexus.html"; 
+    });
+}
+
+/* ==========================================================================
+   BOTÕES DOS MENUS LATERAIS (DASHBOARD) -> identidade
+   ========================================================================== */
+const botaoIdentidadeMenu = document.getElementById("identidade-menu");
+if (botaoIdentidadeMenu !== null) {
+    botaoIdentidadeMenu.addEventListener("click", function() {
+        // Redireciona para a tela da identidade
+        window.location.href = "identidade.html"; 
+    });
+}
+
+const botaoVoltarDashboard = document.getElementById("voltar-dashboard");
+if (botaoVoltarDashboard !== null) {
+    botaoVoltarDashboard.addEventListener("click", function() {
+        // Redireciona de volta para o dashboard
+        window.location.href = "dashboard.html";
     });
 }

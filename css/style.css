@@ -306,3 +306,162 @@ body.tela-login {
     font-size: 0.9rem;
     color: #EF4444;
 }
+
+/* ==========================================================================
+   CONTEÚDO DOS MENUS LATERAIS (DASHBOARD) -> IDENTIDADE
+   ========================================================================== */
+.tela-identidade {
+    justify-content: center;
+    align-items: center;
+}
+
+.identidade-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    text-align: center;
+    background-color: #111827;
+    border: 1px solid #1F2937;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #00E5FF;
+}
+
+.info-grupo{
+    text-align: left;
+    background-color: #0B0F19;
+    border: 1px solid #1F2937;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.botao-voltar {
+    width: 100%;
+    height: 44px;
+    background-color: #1F2937;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    color: #F8FAFC;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botao-voltar:hover {
+    background-color: #00E5FF;
+    border-color: #00E5FF;
+    color: #0B0F19;
+    transform: translateY(-1px);
+}
+/* ==========================================================================
+   CONTEÚDO DOS MENUS LATERAIS (DASHBOARD) -> SEGURANCA
+   ========================================================================== */
+.tela-seguranca {
+    justify-content: center;
+    align-items: center;
+}
+
+.seguranca-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    text-align: center;
+    background-color: #111827;
+    border: 1px solid #1F2937;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.seguranca-container h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #F8FAFC;
+    margin-bottom: 24px;
+}
+
+.info-seguro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.item-seguranca {
+    text-align: left;
+    background-color: #0B0F19;
+    border: 1px solid #1F2937;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.item-seguranca h2 {
+    font-size: 1rem;
+    color: #94A3B8;
+    margin-bottom: 4px;
+}
+
+.item-seguranca p {
+    font-size: 1.1rem;
+    color: #F8FAFC;
+    font-weight: 500;
+}
+
+.bloco-senha {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.alterar-senha {
+    width: 100%;
+    height: 35px;
+    background-color: #1F2937;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    color: #F8FAFC;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.alterar-senha:hover {
+    background-color: #00E5FF;
+    border-color: #00E5FF;
+    color: #0B0F19;
+    transform: translateY(-1px);
+}
+
+.seguranca-container .botao-voltar {
+    width: 100%;
+    height: 44px;
+    background-color: #1F2937;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    color: #F8FAFC;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.seguranca-container .botao-voltar:hover {
+    background-color: #EF4444;
+    border-color: #EF4444;
+    color: #FFFFFF;
+}
