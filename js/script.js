@@ -3,6 +3,7 @@
    ========================================================================== */
 const botaoEntrar = document.getElementById("entrar");
 const campoMensagem = document.getElementById("mensagem");
+const senhaSalva = localStorage.getItem("senha");
 
 if (botaoEntrar !== null) {
     botaoEntrar.addEventListener("click", function(event) {
@@ -11,7 +12,7 @@ if (botaoEntrar !== null) {
         const email = document.getElementById("email").value;
         const senha = document.getElementById("senha").value;
 
-        if (email === "admin@nexus.com" && senha === "123456") {
+        if (email === "admin@nexus.com" && senha === senhaSalva) {
             // Estiliza a mensagem de sucesso em ciano/verde antes de redirecionar
             campoMensagem.style.color = "#00E5FF";
             campoMensagem.textContent = "Acesso Permitido! Entrando...";
@@ -89,7 +90,7 @@ if (botaoSair !== null) {
 }
 
 /* ==========================================================================
-   BOTÕES DOS MENUS LATERAIS (DASHBOARD) -> identidade
+   BOTÕES DOS MENUS LATERAIS (DASHBOARD)
    ========================================================================== */
 const botaoIdentidadeMenu = document.getElementById("identidade-menu");
 if (botaoIdentidadeMenu !== null) {
@@ -104,5 +105,65 @@ if (botaoVoltarDashboard !== null) {
     botaoVoltarDashboard.addEventListener("click", function() {
         // Redireciona de volta para o dashboard
         window.location.href = "dashboard.html";
+    });
+}
+
+const botaoSegurancaMenu = document.getElementById("seguranca-menu");
+if (botaoSegurancaMenu != null) {
+    botaoSegurancaMenu.addEventListener("click", function(){
+        window.location.href = "seguranca.html"
+    });
+}
+
+
+/* ==========================================================================
+   BOTÕES DE ALTERAR SENHA
+   ========================================================================== */
+const botaogatilho = document.getElementById("senha");
+const formNovaSenha = document.querySelector(".nova-senha");
+
+if (botaogatilho !== null && formNovaSenha !== null) {
+    botaogatilho.addEventListener("click", function() {
+        // Se o formulário estiver escondido (ou não estiver como flex)
+        if (formNovaSenha.style.display !== "flex") {
+            formNovaSenha.style.display = "flex";    // Mostra o formulário
+            botaogatilho.textContent = "Cancelar";   
+            botaogatilho.style.backgroundColor = "#27272A"; 
+        } else {
+            formNovaSenha.style.display = "none";    // Esconde de volta
+            botaogatilho.textContent = "Modificar Senha"; 
+            botaogatilho.style.backgroundColor = "#1F2937"; 
+        }
+    });
+}
+
+const salvarNovaSenha = document.getElementById("salvar-nova-senha");
+const novaSenha = document.getElementById("nova-senha");
+const confirmado = document.getElementById("confirmado");
+const mensagemSenha = document.getElementById("mensagem-senha");
+
+if (salvarNovaSenha != null) {
+    salvarNovaSenha.addEventListener("click", function() {
+
+        const senhaDigitada = novaSenha.value;
+        const senhaConfirmada = confirmado.value;
+
+        if (senhaDigitada === ""){
+            mensagemSenha.textContent = "A senha não pode ficar vazia."
+            return;
+        }
+
+        if (senhaDigitada.length < 6){
+            mensagemSenha.textContent = "A senha precisa ter pelo menos 6 caracteres."
+            return;
+        }
+
+        if (senhaDigitada !== senhaConfirmada){
+            mensagemSenha.textContent = "As senhas não coincidem."
+            return;
+        }
+        mensagemSenha.textContent = "Senha confirmada!"
+
+        localStorage.setItem("senha", senhaDigitada);
     });
 }

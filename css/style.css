@@ -440,12 +440,84 @@ body.tela-login {
 }
 
 .alterar-senha:hover {
-    background-color: #00E5FF;
-    border-color: #00E5FF;
-    color: #0B0F19;
+    background-color: #374151;
+    border-color: #4B5563;
     transform: translateY(-1px);
 }
 
+/* ==========================================================================
+   ESTILOS ADICIONADOS PARA O SEU NOVO FORMULÁRIO DE SENHA
+   ========================================================================== */
+
+/* Seu formulário que agrupa os novos inputs e o botão de salvar */
+.nova-senha {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #1F2937; /* Linha sutil separando as seções */
+}
+
+/* Organização vertical para Label + Input */
+.digitar-senha, .senha-confirmada {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Seus novos labels em cinza suave e alinhados à esquerda */
+.novo-label {
+    color: #94A3B8;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* Estilização para deixar os inputs escuros e modernos */
+.nova-senha .entrada {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    background-color: #0B0F19;
+    color: #F8FAFC;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.nova-senha .entrada:focus {
+    outline: none;
+    border-color: #00E5FF;
+    box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15);
+}
+
+/* Seu novo botão de confirmação (.senha-cadastrada) com estilo Ciano moderno */
+.senha-cadastrada {
+    width: 100%;
+    height: 40px;
+    margin-top: 4px;
+    background-color: #00E5FF;
+    border: none;
+    border-radius: 8px;
+    color: #0B0F19;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.senha-cadastrada:hover {
+    background-color: #00B2CC;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   BOTÃO VOLTAR DA BASE
+   ========================================================================== */
 .seguranca-container .botao-voltar {
     width: 100%;
     height: 44px;

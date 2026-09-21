@@ -33,8 +33,25 @@
                     </div>
                     
                     <button id="senha" class="alterar-senha" type="button">
-                        Alterar Senha
+                        Modificar senha
                     </button>
+
+                    <form class="nova-senha">
+                        <div class="digitar-senha">
+                            <label class="novo-label" for="nova-senha">Digite sua nova senha</label>
+                            <input class="entrada" type="password" id="nova-senha" name="senha" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="senha-confirmada">
+                            <label class="novo-label" for="confirmado">Confirmar senha</label>
+                            <input class="entrada" type="password" id="confirmado" name="novaSenha" placeholder="••••••••" required>
+                        </div>
+
+                        <button id="salvar-nova-senha" class="senha-cadastrada" type="button">Salvar nova senha</button>
+
+                        <p id="mensagem-senha"></p>
+
+                    </form>
                 </div>
             </div>
 
