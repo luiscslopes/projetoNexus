@@ -75,6 +75,9 @@ if (botaoEntrar !== null) {
             (emailDigitado === "admin@nexus.com" && senhaDigitada === "123456") ||
             (emailDigitado === emailCadastrado && senhaDigitada === senhaCadastrada && emailCadastrado !== null)
         ) {
+
+            registrarAtividade("Login realizado");
+
             campoMensagem.style.color = "#00E5FF";
             campoMensagem.textContent = "Acesso Permitido! Entrando...";
             
@@ -116,7 +119,7 @@ if (botaoIdentidade !== null) {
     });
 }
 
-// Card: Segurança (Corrigido para 'seguranca' do CARD e não do MENU)
+// Card: Segurança ( do CARD e não do MENU)
 const botaoSeguranca = document.getElementById("seguranca");
 if (botaoSeguranca !== null) {
     botaoSeguranca.addEventListener("click", function() {
@@ -162,6 +165,7 @@ if (botaoSair !== null) {
 const botaoIdentidadeMenu = document.getElementById("identidade-menu");
 if (botaoIdentidadeMenu !== null) {
     botaoIdentidadeMenu.addEventListener("click", function() {
+        registrarAtividade("Identidade acessada");
         window.location.href = "identidade.html"; 
     });
 }
@@ -178,6 +182,7 @@ if (botaoSegurancaMenu !== null) {
 const botaoAtividadesMenu = document.getElementById("atividades-menu");
 if (botaoAtividadesMenu !== null) {
     botaoAtividadesMenu.addEventListener("click", function() {
+        registrarAtividade("Atividades acessadas")
         window.location.href = "atividades.html"; 
     });
 }
@@ -186,6 +191,14 @@ if (botaoAtividadesMenu !== null) {
 const botaoVoltarDashboard = document.getElementById("voltar-dashboard");
 if (botaoVoltarDashboard !== null) {
     botaoVoltarDashboard.addEventListener("click", function() {
+        window.location.href = "dashboard.html";
+    });
+}
+
+// Botão "Voltar para o Dashboard" da tela de Atividades
+const botaoVoltarAtividades = document.getElementById("atividade-voltar-dashboard");
+if (botaoVoltarAtividades !== null) {
+    botaoVoltarAtividades.addEventListener("click", function() {
         window.location.href = "dashboard.html";
     });
 }
@@ -241,6 +254,7 @@ if (salvarNovaSenha !== null) {
 
         // 🌟 Salvando na chave correta para o login ler na próxima vez!
         localStorage.setItem("nexus_senha", senhaDigitada);
+        registrarAtividade("Senha alterada")
 
         mensagemSenha.style.color = "#00E5FF";
         mensagemSenha.textContent = "Senha alterada com sucesso!";
@@ -319,4 +333,49 @@ if (botaoExcluir !== null) {
             window.location.href = "nexus.html";
         }
     });
+}
+
+/* ==========================================================================
+   10. LÓGICA: TELA ATIVIDADES
+   ========================================================================== */
+
+const atividadesSalvas = localStorage.getItem("atividades");
+
+const atividades = atividadesSalvas
+    ? JSON.parse(atividadesSalvas)
+    : [];
+
+const grupoAtividade = document.getElementById("grupo-atividade");
+const agora = new Date();
+const dia = agora.getDate();
+const ano = agora.getFullYear(); 
+const mesAtual = agora.getMonth() + 1;
+
+const mesFormatado = mesAtual.toString().padStart(2, "0");
+const diaFormatado = dia.toString().padStart(2, "0");
+const dataFormatada = diaFormatado + "/" + mesFormatado + "/" + ano;
+
+if (grupoAtividade !== null) {
+
+    atividades.forEach(function(atividade) {
+
+        const novoItem = document.createElement("div");
+        const titulo = document.createElement("h3");
+        const data = document.createElement("h4");
+
+        titulo.textContent = atividade;
+        data.textContent = dataFormatada;
+
+        novoItem.appendChild(titulo);
+        novoItem.appendChild(data);
+
+        grupoAtividade.appendChild(novoItem);
+
+    });
+
+}
+
+function registrarAtividade(atividade) {
+    atividades.push(atividade);
+    localStorage.setItem("atividades", JSON.stringify(atividades));
 }

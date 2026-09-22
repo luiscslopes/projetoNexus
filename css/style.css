@@ -696,3 +696,112 @@ body.tela-cadastro {
     border-color: #EF4444 !important;
     color: #FFFFFF !important;
 }
+
+/* ==========================================================================
+   TELA DE ATIVIDADES
+   ========================================================================== */
+
+.tela-atividade {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#atividade-container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+#atividade-container hr {
+    border: none;
+    border-top: 1px solid #1F2937;
+    margin-top: 24px;
+}
+
+#atividade-container h1 {
+    color: #00E5FF;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+#atividade-container h3 {
+    color: #F8FAFC;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+#atividade-container p {
+    color: #94A3B8;
+    font-size: 0.9rem;
+}
+
+#atividade-container hr {
+    border: none;
+    border-top: 1px solid #1F2937;
+    margin-top: 24px;
+}
+
+#grupo-atividade {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+    width: 100%;
+    max-width: 600px;   
+}
+
+#grupo-atividade > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111827;
+    border: 1px solid #1F2937;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);    
+}
+
+#grupo-atividade > div > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#grupo-atividade h3 {
+    color: #F8FAFC;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+#grupo-atividade h4 {
+    color: #94A3B8;
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+#atividade-voltar-dashboard {
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #00E5FF;
+    border: none;
+    border-radius: 8px;
+    color: #0B0F19;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#atividade-voltar-dashboard:hover {
+    background-color: #EF4444;
+    color: #FFFFFF;
+}
