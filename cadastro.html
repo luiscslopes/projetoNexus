@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro - NEXUS</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+        <script src="js/script.js" defer></script>
+    </head>
+    
+    <body class="tela-cadastro">
+        
+        <div class="cadastro-container">
+            <div class="cadastro-header">
+                <h1 class="destaque">NEXUS</h1>
+                <h2>Crie sua identidade digital</h2>
+                <p>Primeiro acesso? Preencha os dados abaixo.</p>
+            </div>
+
+            <form class="cadastro-form">
+                <div class="grupo-input">
+                    <label class="label" for="nome">Nome Completo</label>
+                    <input class="entrada" type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label class="label" for="email">E-mail</label>
+                    <input class="entrada" type="email" id="email" name="email" placeholder="nome@exemplo.com" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label class="label" for="senha">Criar Senha</label>
+                    <input class="entrada" type="password" id="senha" name="senha" placeholder="••••••••" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label class="label" for="confirmar-senha">Confirmar Senha</label>
+                    <input class="entrada" type="password" id="confirmar-senha" name="confirmar-senha" placeholder="••••••••" required>
+                </div>
+
+                <button class="botao-cadastrar" id="btn-registrar" type="submit">Finalizar Cadastro</button>
+                
+                <p id="mensagem-cadastro"></p>
+
+                <!-- Link elegante para voltar ao Login -->
+                <div class="cadastro-footer">
+                    <span>Já tem uma conta? <a href="nexus.html">Faça login</a></span>
+                </div>
+            </form>
+        </div>
+
+    </body>
+</html>
